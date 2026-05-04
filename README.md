@@ -443,26 +443,6 @@ graph LR
     S2 -- "propagation auto" --> C2["cible\nvaleur = 99"]
 ```
 
-**Après `cible.unbind()` :**
-
-```mermaid
-sequenceDiagram
-    participant Code
-    participant Source as source (42)
-    participant Cible as cible (42, liée)
-
-    Code->>Cible: bind(source)
-    Note over Cible: isBound() = true
-    Code->>Source: set(99)
-    Source-->>Cible: propagation automatique (valeur = 99)
-    Code->>Cible: unbind()
-    Note over Cible: isBound() = false, valeur = 99
-    Code->>Source: set(200)
-    Note over Cible: cible reste à 99 - plus de propagation
-    Code->>Cible: set(0)
-    Note over Cible: OK ! cible est libre, valeur = 0
-```
-
 ### Découverte du code
 
 1. Ouvrez `src/main/java/fr/univ_amu/iut/exercice2/LiaisonProprietes.java`. Vous y trouverez :
@@ -498,12 +478,12 @@ Remarquez que la dernière ligne affiche encore 7168, pas 8192 : après `unbind(
 
 | # | Nom du test | Ce qu'il vérifie | Méthode / concept |
 |---|---|---|---|
-| 1 | `testBindPropaGeLaValeur` | Après `bind(source)`, `cible.get() == source.get()` | `bind()` - propagation immédiate |
+| 1 | `testBindPropageLaValeur` | Après `bind(source)`, `cible.get() == source.get()` | `bind()` - propagation immédiate |
 | 2 | `testLaCibleSuitLaSource` | Quand `source.set(100)`, `cible.get() == 100` | `bind()` - propagation continue |
 | 3 | `testUnbindArreteLaPropagation` | Après `unbind()` + `source.set(999)`, `cible` reste à 100 | `unbind()` - arrêt de propagation |
 | 4 | `testIsBoundRetourneTrueSiLiee` | `isBound()` = false, true, false selon l'état | `isBound()` |
 | 5 | `testAfficheValeurInitialeAvantLiaison` | Affiche `otherProperty.get() = 0` | Valeur par défaut avant `bind()` |
-| 6 | `testLiaisonPropaGeLaValeurSource` | Affiche `Binding...` puis `otherProperty.get() = 1024` | Propagation lors du `bind()` |
+| 6 | `testLiaisonPropageLaValeurSource` | Affiche `Binding...` puis `otherProperty.get() = 1024` | Propagation lors du `bind()` |
 | 7 | `testChangementSourcePropageVersCible` | Affiche `otherProperty.get() = 7168` au moins 3 fois | Propagation lors de `set()` |
 | 8 | `testApresUnbindLaCibleNeSuitPlus` | Affiche `Unbinding...` puis `Calling...set(8192)` | `unbind()` - indépendance retrouvée |
 

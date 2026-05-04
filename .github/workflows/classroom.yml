@@ -252,13 +252,13 @@ jobs:
           timeout: 5
           max-score: 9
 
-      - name: "exercice2 : testBindPropaGeLaValeur"
-        id: exercice2_testBindPropaGeLaValeur
+      - name: "exercice2 : testBindPropageLaValeur"
+        id: exercice2_testBindPropageLaValeur
         uses: IUTInfoAix-R202/autograding-command-grader@main
         with:
-          test-name: "exercice2 : testBindPropaGeLaValeur"
+          test-name: "exercice2 : testBindPropageLaValeur"
           setup-command: ""
-          command: ./grade-test.sh fr.univ_amu.iut.exercice2.LiaisonProprietesTest testBindPropaGeLaValeur
+          command: ./grade-test.sh fr.univ_amu.iut.exercice2.LiaisonProprietesTest testBindPropageLaValeur
           timeout: 5
           max-score: 15
 
@@ -302,13 +302,13 @@ jobs:
           timeout: 5
           max-score: 14
 
-      - name: "exercice2 : testLiaisonPropaGeLaValeurSource"
-        id: exercice2_testLiaisonPropaGeLaValeurSource
+      - name: "exercice2 : testLiaisonPropageLaValeurSource"
+        id: exercice2_testLiaisonPropageLaValeurSource
         uses: IUTInfoAix-R202/autograding-command-grader@main
         with:
-          test-name: "exercice2 : testLiaisonPropaGeLaValeurSource"
+          test-name: "exercice2 : testLiaisonPropageLaValeurSource"
           setup-command: ""
-          command: ./grade-test.sh fr.univ_amu.iut.exercice2.LiaisonProprietesTest testLiaisonPropaGeLaValeurSource
+          command: ./grade-test.sh fr.univ_amu.iut.exercice2.LiaisonProprietesTest testLiaisonPropageLaValeurSource
           timeout: 5
           max-score: 14
 
@@ -1139,12 +1139,12 @@ jobs:
           EXERCICE1_TESTCHANGELISTENERESTDECLENCHEAVECANCIENNEETNOUVELLEVALEUR_RESULTS: "${{ steps.exercice1_testChangeListenerEstDeclencheAvecAncienneEtNouvelleValeur.outputs.result }}"
           EXERCICE1_TESTCHANGELISTENERDECLENCHEACHAQUEMISEAJOUR_RESULTS: "${{ steps.exercice1_testChangeListenerDeclencheAChaqueMiseAJour.outputs.result }}"
           EXERCICE1_TESTCHANGELISTENERRETIREFONCTIONNE_RESULTS: "${{ steps.exercice1_testChangeListenerRetireFonctionne.outputs.result }}"
-          EXERCICE2_TESTBINDPROPAGELAVALEUR_RESULTS: "${{ steps.exercice2_testBindPropaGeLaValeur.outputs.result }}"
+          EXERCICE2_TESTBINDPROPAGELAVALEUR_RESULTS: "${{ steps.exercice2_testBindPropageLaValeur.outputs.result }}"
           EXERCICE2_TESTLACIBLESUITLASOURCE_RESULTS: "${{ steps.exercice2_testLaCibleSuitLaSource.outputs.result }}"
           EXERCICE2_TESTUNBINDARRETELAPROPAGATION_RESULTS: "${{ steps.exercice2_testUnbindArreteLaPropagation.outputs.result }}"
           EXERCICE2_TESTISBOUNDRETOURNETRUESILIEE_RESULTS: "${{ steps.exercice2_testIsBoundRetourneTrueSiLiee.outputs.result }}"
           EXERCICE2_TESTAFFICHEVALEURINITIALEAVANTLIAISON_RESULTS: "${{ steps.exercice2_testAfficheValeurInitialeAvantLiaison.outputs.result }}"
-          EXERCICE2_TESTLIAISONPROPAGELAVALEURSOURCE_RESULTS: "${{ steps.exercice2_testLiaisonPropaGeLaValeurSource.outputs.result }}"
+          EXERCICE2_TESTLIAISONPROPAGELAVALEURSOURCE_RESULTS: "${{ steps.exercice2_testLiaisonPropageLaValeurSource.outputs.result }}"
           EXERCICE2_TESTCHANGEMENTSOURCEPROPAGEVERSCIBLE_RESULTS: "${{ steps.exercice2_testChangementSourcePropageVersCible.outputs.result }}"
           EXERCICE2_TESTAPRESUNBINDLACIBLENESUITPLUS_RESULTS: "${{ steps.exercice2_testApresUnbindLaCibleNeSuitPlus.outputs.result }}"
           EXERCICE3_TESTLETEXTEESTCORRECT_RESULTS: "${{ steps.exercice3_testLeTexteEstCorrect.outputs.result }}"
@@ -1227,7 +1227,7 @@ jobs:
           EXERCICE8_TEXTFIELDFAHRENHEITSYNCHROAVECSLIDER_RESULTS: "${{ steps.exercice8_textFieldFahrenheitSynchroAvecSlider.outputs.result }}"
           EXERCICE8_CONVERSIONALLERRETOUR_RESULTS: "${{ steps.exercice8_conversionAllerRetour.outputs.result }}"
         with:
-          runners: compilation,exercice1_testLaProprieteExisteApresSetAnInt,exercice1_testLaValeurInitialeEst1024,exercice1_testCreerProprieteAfficheLeToString,exercice1_testCreerProprieteAfficheGet,exercice1_testCreerProprieteAfficheGetValue,exercice1_testInvalidationListenerEstDeclenche,exercice1_testInvalidationListenerPasDeclencheSiMemeValeur,exercice1_testInvalidationListenerEstParesseux,exercice1_testInvalidationListenerRetireFonctionne,exercice1_testChangeListenerEstDeclencheAvecAncienneEtNouvelleValeur,exercice1_testChangeListenerDeclencheAChaqueMiseAJour,exercice1_testChangeListenerRetireFonctionne,exercice2_testBindPropaGeLaValeur,exercice2_testLaCibleSuitLaSource,exercice2_testUnbindArreteLaPropagation,exercice2_testIsBoundRetourneTrueSiLiee,exercice2_testAfficheValeurInitialeAvantLiaison,exercice2_testLiaisonPropaGeLaValeurSource,exercice2_testChangementSourcePropageVersCible,exercice2_testApresUnbindLaCibleNeSuitPlus,exercice3_testLeTexteEstCorrect,exercice3_testLaCouleurEstStockee,exercice3_testNbClicsInitialEstZero,exercice3_testNbClicsPropertyRetourneUnePropriete,exercice3_testClicIncrementeNbClics,exercice3_testDeuxClicsIncrementent,exercice3_testLaPropertyEstLieeAuCompteur,exercice3_laFenetreEstVisible,exercice3_laSceneExiste,exercice3_laRacineEstUnBorderPane,exercice3_lesTroisBoutonsExistent,exercice3_lesBoutonsOntUneCouleur,exercice3_leHBoxDesBoutonsEstEnHaut,exercice3_laZoneDeCouleurExiste,exercice3_leLabelCompteursExiste,exercice3_leTexteInitialAvantClic,exercice3_cliquerRougeMetLaZoneEnRouge,exercice3_cliquerVertMetLaZoneEnVert,exercice3_cliquerIncrementeLeCompteur,exercice3_leTexteBasculeDeBienvenueAuxCompteurs,exercice3_lesCompteursSontIndependants,exercice3_leLabelEstLieParBinding,exercice4_testLesProprietesSontInitialiseesAZero,exercice4_testLesProprietesJavaBeansFonctionnent,exercice4_testTriangleVideAireZero,exercice4_testTriangleUniteAireZeroVirguleCinq,exercice4_testTriangleCorrectArea,exercice4_testTriangleDeuxiemeCorrectArea,exercice4_testAirePositiveMemeAvecDeterminantNegatif,exercice4_testModifierCoordonneeRecalculeAire,exercice4_testAreaPropertyEstLiee,exercice4_testPrintResultAfficheLeTexteAttendu,exercice5_laFenetreEstVisible,exercice5_laSceneExiste,exercice5_laRacineEstUnGridPane,exercice5_lesSixSlidersExistent,exercice5_lesSlidersOntDesTickMarks,exercice5_leTextFieldAireExiste,exercice5_leTextFieldAireEstLieParBinding,exercice5_deplacerSliderModifieAire,exercice5_lePanneauDessinExiste,exercice5_lesTroisLignesExistent,exercice5_deplacerSliderModifieLeDessin,exercice5_aireCorrectePourTriangleConnu,exercice6_laFenetreEstVisible,exercice6_leChampIdentifiantExiste,exercice6_leChampMotDePasseExiste,exercice6_leChampMotDePasseEstNonEditableAuDebut,exercice6_saisirSixCaracteresRendMotDePasseEditable,exercice6_cinqCaracteresNeSuffitPas,exercice6_boutonOkDesactiveInitialement,exercice6_boutonOkDesactiveSiMotDePasseTropCourt,exercice6_motDePasseSansChiffreGardeOkDesactive,exercice6_motDePasseSansMajusculeGardeOkDesactive,exercice6_motDePasseValideActiveOk,exercice6_boutonAnnulerDesactiveSiChampsVides,exercice6_boutonAnnulerActifSiUnChampRempli,exercice6_boutonAnnulerVideLesChamps,exercice6_boutonOkAfficheLMessage,exercice7_laFenetreEstVisible,exercice7_leCercleExiste,exercice7_leSliderExiste,exercice7_leTextFieldExiste,exercice7_rayonInitialEst150,exercice7_deplacerSliderModifieLeCercle,exercice7_deplacerSliderModifieLeTextField,exercice7_leTextFieldModifieLeSliderEtLeCercle,exercice7_leCercleEstCentreDansLePanneau,exercice8_laFenetreEstVisible,exercice8_leSliderCelsiusExiste,exercice8_leSliderFahrenheitExiste,exercice8_lesTextFieldsExistent,exercice8_valeurInitialeCorrecte,exercice8_deplacerCelsiusMetAJourFahrenheit,exercice8_deplacerFahrenheitMetAJourCelsius,exercice8_textFieldCelsiusSynchroAvecSlider,exercice8_conversionCorrecteValeurIntermediaire,exercice8_textFieldFahrenheitSynchroAvecSlider,exercice8_conversionAllerRetour
+          runners: compilation,exercice1_testLaProprieteExisteApresSetAnInt,exercice1_testLaValeurInitialeEst1024,exercice1_testCreerProprieteAfficheLeToString,exercice1_testCreerProprieteAfficheGet,exercice1_testCreerProprieteAfficheGetValue,exercice1_testInvalidationListenerEstDeclenche,exercice1_testInvalidationListenerPasDeclencheSiMemeValeur,exercice1_testInvalidationListenerEstParesseux,exercice1_testInvalidationListenerRetireFonctionne,exercice1_testChangeListenerEstDeclencheAvecAncienneEtNouvelleValeur,exercice1_testChangeListenerDeclencheAChaqueMiseAJour,exercice1_testChangeListenerRetireFonctionne,exercice2_testBindPropageLaValeur,exercice2_testLaCibleSuitLaSource,exercice2_testUnbindArreteLaPropagation,exercice2_testIsBoundRetourneTrueSiLiee,exercice2_testAfficheValeurInitialeAvantLiaison,exercice2_testLiaisonPropageLaValeurSource,exercice2_testChangementSourcePropageVersCible,exercice2_testApresUnbindLaCibleNeSuitPlus,exercice3_testLeTexteEstCorrect,exercice3_testLaCouleurEstStockee,exercice3_testNbClicsInitialEstZero,exercice3_testNbClicsPropertyRetourneUnePropriete,exercice3_testClicIncrementeNbClics,exercice3_testDeuxClicsIncrementent,exercice3_testLaPropertyEstLieeAuCompteur,exercice3_laFenetreEstVisible,exercice3_laSceneExiste,exercice3_laRacineEstUnBorderPane,exercice3_lesTroisBoutonsExistent,exercice3_lesBoutonsOntUneCouleur,exercice3_leHBoxDesBoutonsEstEnHaut,exercice3_laZoneDeCouleurExiste,exercice3_leLabelCompteursExiste,exercice3_leTexteInitialAvantClic,exercice3_cliquerRougeMetLaZoneEnRouge,exercice3_cliquerVertMetLaZoneEnVert,exercice3_cliquerIncrementeLeCompteur,exercice3_leTexteBasculeDeBienvenueAuxCompteurs,exercice3_lesCompteursSontIndependants,exercice3_leLabelEstLieParBinding,exercice4_testLesProprietesSontInitialiseesAZero,exercice4_testLesProprietesJavaBeansFonctionnent,exercice4_testTriangleVideAireZero,exercice4_testTriangleUniteAireZeroVirguleCinq,exercice4_testTriangleCorrectArea,exercice4_testTriangleDeuxiemeCorrectArea,exercice4_testAirePositiveMemeAvecDeterminantNegatif,exercice4_testModifierCoordonneeRecalculeAire,exercice4_testAreaPropertyEstLiee,exercice4_testPrintResultAfficheLeTexteAttendu,exercice5_laFenetreEstVisible,exercice5_laSceneExiste,exercice5_laRacineEstUnGridPane,exercice5_lesSixSlidersExistent,exercice5_lesSlidersOntDesTickMarks,exercice5_leTextFieldAireExiste,exercice5_leTextFieldAireEstLieParBinding,exercice5_deplacerSliderModifieAire,exercice5_lePanneauDessinExiste,exercice5_lesTroisLignesExistent,exercice5_deplacerSliderModifieLeDessin,exercice5_aireCorrectePourTriangleConnu,exercice6_laFenetreEstVisible,exercice6_leChampIdentifiantExiste,exercice6_leChampMotDePasseExiste,exercice6_leChampMotDePasseEstNonEditableAuDebut,exercice6_saisirSixCaracteresRendMotDePasseEditable,exercice6_cinqCaracteresNeSuffitPas,exercice6_boutonOkDesactiveInitialement,exercice6_boutonOkDesactiveSiMotDePasseTropCourt,exercice6_motDePasseSansChiffreGardeOkDesactive,exercice6_motDePasseSansMajusculeGardeOkDesactive,exercice6_motDePasseValideActiveOk,exercice6_boutonAnnulerDesactiveSiChampsVides,exercice6_boutonAnnulerActifSiUnChampRempli,exercice6_boutonAnnulerVideLesChamps,exercice6_boutonOkAfficheLMessage,exercice7_laFenetreEstVisible,exercice7_leCercleExiste,exercice7_leSliderExiste,exercice7_leTextFieldExiste,exercice7_rayonInitialEst150,exercice7_deplacerSliderModifieLeCercle,exercice7_deplacerSliderModifieLeTextField,exercice7_leTextFieldModifieLeSliderEtLeCercle,exercice7_leCercleEstCentreDansLePanneau,exercice8_laFenetreEstVisible,exercice8_leSliderCelsiusExiste,exercice8_leSliderFahrenheitExiste,exercice8_lesTextFieldsExistent,exercice8_valeurInitialeCorrecte,exercice8_deplacerCelsiusMetAJourFahrenheit,exercice8_deplacerFahrenheitMetAJourCelsius,exercice8_textFieldCelsiusSynchroAvecSlider,exercice8_conversionCorrecteValeurIntermediaire,exercice8_textFieldFahrenheitSynchroAvecSlider,exercice8_conversionAllerRetour
 
       - name: Sauvegarder le cache des rapports Surefire
         if: always()
